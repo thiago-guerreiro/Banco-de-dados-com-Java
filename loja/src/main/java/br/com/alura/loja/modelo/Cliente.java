@@ -7,19 +7,30 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "categorias")
-public class Categoria {
+@Table(name = "clientes")
+public class Cliente {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	private String nome;
 	
-	public Categoria() {
+	private String nome;
+	private String cpf;
+	
+	public Cliente() {
 	}
 	
-	public Categoria(String nome) {
+	public Cliente(String nome, String cpf) {
 		this.nome = nome;
+		this.cpf = cpf;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	public String getNome() {
@@ -30,4 +41,12 @@ public class Categoria {
 		this.nome = nome;
 	}
 
+	public String getCpf() {
+		return cpf;
+	}
+
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
+	}
+	
 }
